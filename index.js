@@ -1,5 +1,5 @@
-import readline from "readline";
-import Personagen from "./class/Personagen.js";
+const readline = require("readline");
+const Personagen = require("./class/Personagen.js");
 
 const rl = readline.createInterface({
   input: process.stdin,
