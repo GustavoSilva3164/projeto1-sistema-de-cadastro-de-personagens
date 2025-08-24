@@ -18,10 +18,9 @@ async function main() {
   const vida = parseInt(await perguntar("Digite os pontos de vida: "), 10);
 
   const jogador = new Personagen(nome, classe, vida);
-  console.log("\n✅ Personagem criado com sucesso!");
-  jogador.mostrarInfo();
 
-  // Loop de ações
+  console.log("\n✅ Personagem criado com sucesso!");
+
   let sair = false;
   while (!sair) {
     console.log("\n=== Ações ===");
@@ -35,7 +34,8 @@ async function main() {
 
     switch (opcao) {
       case "1":
-        jogador.atacar();
+        const ataca = parseInt(await perguntar("Quanto de ataque? "), 10);
+        jogador.atacar(ataca);
         break;
       case "2":
         const dano = parseInt(await perguntar("Quanto de dano? "), 10);
